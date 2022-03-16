@@ -11,23 +11,38 @@ def calculate():
     while True:
         input_string = input("What do you want to calculate?: \n> ")
 
-        if 'q' in input_string:
+        if input_string == "q":
             print('later!')
             break
-
+        
         tokens = input_string.split(' ')
-        print(tokens)
         operand = tokens[0]
-        print(operand)
         num1 = float(tokens[1])
-        print(num1)
-        num2 = float(tokens[2])
-        print(num2)
+
+        if len(tokens) == 3:
+            num2 = float(tokens[2])
+            print(num2)
 
         if operand == "+":
             print(add(num1, num2))
+        
+        if operand == "-":
+            print(subtract(num1, num2))
+
+        if operand == "*":
+            print(multiply(num1, num2))
+
+        if operand == "/":
+            print(divide(num1, num2))
+
+        if operand == "square":
+            print(square(num1))
+
+        if operand == "pow":
+            print(power(num1,num2))
+
+        if operand == "mod":
+            print(mod(num1, num2))
     
     
-
-
 calculate()
